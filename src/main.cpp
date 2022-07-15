@@ -40,6 +40,7 @@ bool sendTelemetry(int totalSeen, int totalFpSeen, int totalFpQueried, int total
             && DHT::SendDiscovery()
             && BH1750::SendDiscovery()
             && BME280::SendDiscovery()
+            && BMP280::SendDiscovery()
             && TSL2561::SendDiscovery()
             && HX711::SendDiscovery()
 #endif
@@ -204,6 +205,7 @@ void setupNetwork()
 
     BH1750::ConnectToWifi();
     BME280::ConnectToWifi();
+    BMP280::ConnectToWifi();
     TSL2561::ConnectToWifi();
     HX711::ConnectToWifi();
 #endif
@@ -238,6 +240,7 @@ void setupNetwork()
     DHT::SerialReport();
     BH1750::SerialReport();
     BME280::SerialReport();
+    BMP280::SerialReport();
     TSL2561::SerialReport();
     HX711::SerialReport();
 #endif
@@ -559,6 +562,7 @@ void setup()
     I2C::Setup();
     BH1750::Setup();
     BME280::Setup();
+    BMP280::Setup();
     TSL2561::Setup();
     HX711::Setup();
 #endif
@@ -586,6 +590,7 @@ void loop()
     DHT::Loop();
     BH1750::Loop();
     BME280::Loop();
+    BMP280::Loop();
     TSL2561::Loop();
     HX711::Loop();
     I2C::Loop();
